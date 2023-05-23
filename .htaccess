@@ -1,0 +1,10 @@
+Header set Access-Control-Allow-Origin "*"
+
+RewriteEngine on
+
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteCond %{HTTPS} off
+#ewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond $1 !^(index\.php|relatorio\.pdf|info\.php|images|assets|tmp|uploads|robots\.txt)
+RewriteRule ^(.*)$ index.php/$1 [L]
